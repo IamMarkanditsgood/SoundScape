@@ -7,7 +7,6 @@ public class ResourceSaveManager
         {
             { ResourceTypes.Coins, GameSaveKeys.Coins },
             { ResourceTypes.Score, GameSaveKeys.Score },
-             { ResourceTypes.SkillPoints, GameSaveKeys.CurrentSkillPoints },
         };
 
     public void SaveResource(ResourceTypes resource, float amount)

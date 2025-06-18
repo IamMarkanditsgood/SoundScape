@@ -1,6 +1,6 @@
 public enum ScreenTypes
 {
-    StartScreen,
+    Home,
     Game,
     Shop,
     AnimalInfo,

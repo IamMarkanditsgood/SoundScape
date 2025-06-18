@@ -128,14 +128,6 @@ public class PlayerPrefStorage
 
     public void DeleteAllSaves()
     {
-        if (PlayerPrefs.HasKey(GameSaveKeys.IsFirstGame))
-        {
-            PlayerPrefs.DeleteAll();
-            PlayerPrefs.SetInt(GameSaveKeys.IsFirstGame, 1);
-        }
-        else
-        {
-            PlayerPrefs.DeleteAll();
-        }
+        PlayerPrefs.DeleteAll();
     }
 }

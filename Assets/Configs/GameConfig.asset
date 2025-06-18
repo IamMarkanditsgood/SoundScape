@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caefc163b24f9934dad62f459537f5c7, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  _defaultPresets:
+  - presetName: Silent Night
+    presetSpriteIndex: 4
+    soundType: 0500000005000000
+    volume:
+    - 0.5
+    - 0.5
+    isLiked: 1
+  - presetName: Wings and Wind
+    presetSpriteIndex: 5
+    soundType: 0400000006000000070000000500000003000000
+    volume:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    isLiked: 0
+  - presetName: Night River
+    presetSpriteIndex: 6
+    soundType: 010000000500000006000000
+    volume:
+    - 0.5
+    - 0.5
+    - 0.5
+    isLiked: 0
+  - presetName: Calm Camp
+    presetSpriteIndex: 7
+    soundType: 03000000020000000700000006000000
+    volume:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    isLiked: 0
+  - presetName: Wild Life
+    presetSpriteIndex: 8
+    soundType: 0400000003000000
+    volume:
+    - 0.5
+    - 0.5
+    isLiked: 0
+  sounds:
+  - soundType: 0
+    soundClip: {fileID: 8300000, guid: 67867cc058cbe9243a3b90df74d3f09c, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: 9f3e8f5947df38243ba14f595bbaed43, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: 767f79178df99644fa22a12004638abe, type: 3}
+  - soundType: 1
+    soundClip: {fileID: 8300000, guid: 3cfa2d3100524814babb22b205e3ecbc, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: 203be246da3442a408a8935fd37b6b88, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: c7e696ffd63ec78449de430f338f4978, type: 3}
+  - soundType: 2
+    soundClip: {fileID: 8300000, guid: 32019f7983267974982d3e1902eee24c, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: b15740b9370266b4fbc6c02b8ecda974, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: 6fbbf4c6ce495464b81cb38cf004802d, type: 3}
+  - soundType: 3
+    soundClip: {fileID: 8300000, guid: 674bb8bda8725f04da664e82d713fd2a, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: 3bb8e55b589f68b4289a11ecdf245a40, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: bab973ee909053a4599cf33e97c33ead, type: 3}
+  - soundType: 4
+    soundClip: {fileID: 8300000, guid: 3f184a4e971030949a9f53ffe645c1d4, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: e1bea5dbbb6716148a0786b6340010b8, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: 6bf873cd74698e5409db9dd1775cd79e, type: 3}
+  - soundType: 5
+    soundClip: {fileID: 8300000, guid: 06a1982ff6c6a55498057ebf157eff1b, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: e1a6d1dd6f20a22459cb328b93a92b90, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: ec834005c5e9bff40a984a7f46d438f5, type: 3}
+  - soundType: 6
+    soundClip: {fileID: 8300000, guid: bfa4c4b7e90d03844863474062ae3d00, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: 5eb2fbea81dae8a4d86ac6437c12c532, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: 7d104b3fba8985e4d96b6905b11b0fba, type: 3}
+  - soundType: 7
+    soundClip: {fileID: 8300000, guid: 0f2c5d4fe9c4b3043a15a35a8f163dad, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: fc0852a848f08824bb19a410c7973878, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: 0e77613217b798f4695c7a469abf9ed1, type: 3}
+  presetImages:
+  - {fileID: 21300000, guid: 893badaaf51af44409600709e3cd083f, type: 3}
+  - {fileID: 21300000, guid: 2726e92b14d6f544286cc9f6ba442d12, type: 3}
+  - {fileID: 21300000, guid: fb908b47df16df14b97d4cd29215f61c, type: 3}
+  - {fileID: 21300000, guid: 2eec75980cc545e4d9dafe2aa497efb5, type: 3}
+  - {fileID: 21300000, guid: 2ce664c7301b2f34ea0eb471d8c570dc, type: 3}
+  - {fileID: 21300000, guid: 1faaafe821ae67e4f9abb0bb87fc9dd6, type: 3}
+  - {fileID: 21300000, guid: ec026bf4009340d4184ee827cf9df7ee, type: 3}
+  - {fileID: 21300000, guid: 871daf831099d4b43b38e0f99c27cf5d, type: 3}
+  - {fileID: 21300000, guid: 73079170ca5f4eb4c8a83713ac6464bc, type: 3}

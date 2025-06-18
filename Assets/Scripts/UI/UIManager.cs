@@ -18,6 +18,8 @@ public class UIManager: MonoBehaviour
         }
         
         InitScreens();
+
+        
     }
     
     private void InitScreens()
