@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,26 +32,44 @@ public class TextManager
         }
     }
 
-    public void SetTimerText(TMP_Text textRow, float seconds, bool showHoursAndMinutes = false, string frontAddedMessage = "", string endAddedMessage = "")
+    public void SetTimerText(TMP_Text textRow, float seconds, bool showMinutes = false, bool showHours = false, string frontAddedMessage = "", string endAddedMessage = "", bool addToPrevious = false, string symbolBetween = ":")
     {
-        textRow.text = $"{frontAddedMessage}{FormatTime(seconds, showHoursAndMinutes)}{endAddedMessage}";
+        string formattedText = FormatTime(seconds, showMinutes, showHours, symbolBetween);
+
+        if (addToPrevious)
+        {
+            textRow.text += frontAddedMessage + formattedText + endAddedMessage;
+        }
+        else
+        {
+            textRow.text = frontAddedMessage + formattedText + endAddedMessage;
+        }
     }
 
-    private string FormatTime(float seconds, bool showHoursAndMinutes)
+    private string FormatTime(float seconds, bool showMinutes, bool showHours, string symbolBetween)
     {
-        if (showHoursAndMinutes)
+        if (!showMinutes)
+            showHours = false;
+        if (showHours)
+            showMinutes = true;
+
+        int totalSeconds = Mathf.FloorToInt(seconds);
+        int secs = totalSeconds % 60;
+        int mins = (totalSeconds / 60) % 60;
+        int hrs = totalSeconds / 3600;
+
+        if (!showMinutes)
         {
-            int hours = Mathf.FloorToInt(seconds / 3600);
-            int minutes = Mathf.FloorToInt((seconds % 3600) / 60);
-            int secs = Mathf.FloorToInt(seconds % 60);
-
-            return hours > 0
-                ? $"{hours:D2}:{minutes:D2}:{secs:D2}"
-                : $"{minutes:D2}:{secs:D2}";
+            return secs.ToString("D2");
         }
-
-        int secsOnly = Mathf.FloorToInt(seconds);
-        return $"{secsOnly}";
+        else if (showMinutes && !showHours)
+        {
+            return mins.ToString("D2") + symbolBetween + secs.ToString("D2");
+        }
+        else 
+        {
+            return hrs.ToString("D2") + symbolBetween + mins.ToString("D2") + symbolBetween + secs.ToString("D2");
+        }
     }
 
     private string GetFormattedText(object message, bool formatKNumber =false)

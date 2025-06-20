@@ -44,9 +44,9 @@ public class HomeScreen : BasicScreen
     private SoundPanel SetPanel(SoundPanel panel, PresetData presetData )
     {
         List<Sprite> icons = new();
-        for(int i = 0; i< presetData.soundType.Count; i++)
+        for(int i = 0; i< presetData.sounds.Count; i++)
         {
-            icons.Add(GetPinkSprite(presetData.soundType[i]));
+            icons.Add(GetPinkSprite(presetData.sounds[i]));
         }
 
         panel.SetPanel(_gameConfig.presetImages[presetData.presetSpriteIndex], presetData.presetName, icons);
@@ -67,5 +67,8 @@ public class HomeScreen : BasicScreen
     private void PresetPressed(string name)
     {
         Debug.Log("name = " + name);
+        SoundPlayer soundPlayer = (SoundPlayer)UIManager.Instance.GetPopup(PopupTypes.SoundPlayer);
+        soundPlayer.Init(name);
+        soundPlayer.Show();
     }
 }

@@ -8,6 +8,16 @@ public class GameConfig : ScriptableObject
     public List<PresetData> _defaultPresets;
     public SoundData[] sounds;
     public Sprite[] presetImages;
+
+    public SoundData GetSoundData(SoundTypes soundType)
+    {
+        foreach(var sound in sounds)
+        {
+            if(sound.soundType == soundType)
+                return sound;
+        }
+        return null;
+    }
 }
 [Serializable]
 public class SoundData

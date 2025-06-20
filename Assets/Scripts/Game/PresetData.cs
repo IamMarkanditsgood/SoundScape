@@ -7,7 +7,7 @@ public class PresetData
 {
     public string presetName;
     public int presetSpriteIndex;
-    public List<SoundTypes> soundType = new();
+    public List<SoundTypes> sounds = new();
     public List<float> volume = new();
     public bool isLiked;
 }
