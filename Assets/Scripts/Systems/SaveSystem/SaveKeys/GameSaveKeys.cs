@@ -7,4 +7,7 @@ public static class GameSaveKeys
     public static readonly string TotalCreatedPreset = "TotalCreatedPreset";
     public static readonly string LikedPreset = "LikedPreset";
     public static readonly string FavoriteSounds = "FavoriteSounds";
+    public static readonly string Name = "Name";
+    public static readonly string Vibro = "Vibro";
+    public static readonly string Notification = "Notification";
 }

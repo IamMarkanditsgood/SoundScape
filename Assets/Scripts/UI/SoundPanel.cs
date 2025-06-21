@@ -1,34 +1,32 @@
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundPanel : MonoBehaviour
+public class SoundPanel : DefaultSoundPanel
 {
-    public string presetName;
-    [SerializeField] private Image _mainImage;
-    [SerializeField] private TMP_Text _presetName;
-    [SerializeField] private Image[] _soundIcons;
+    public Button _deleteButton;
+    public bool isLikeCollection;
 
-    public void SetPanel(Sprite image, string name, List<Sprite> icons)
+    public void Start()
     {
-        presetName = name;
-        _mainImage.sprite = image;
-        _presetName.text = name;
-
-
-        for(int i = 0; i < icons.Count; i++)
-        {
-            _soundIcons[i].sprite = icons[i];
-            _soundIcons[i].gameObject.SetActive(true);
-            if(i + 1 == _soundIcons.Length - 1)
-                break;
-        }
-
-        if(icons.Count > _soundIcons.Length - 1)
-            _soundIcons[^1].gameObject.SetActive(true);
-        else
-            _soundIcons[^1].gameObject.SetActive(false);
+        _deleteButton.onClick.AddListener(Deleate);
     }
 
+    public void OnDestroy()
+    {
+        _deleteButton.onClick.RemoveListener(Deleate);
+    }
+
+    private void Deleate()
+    {
+        Vibrate();
+        DeleatePopup deleatePopup = (DeleatePopup)UIManager.Instance.GetPopup(PopupTypes.DeletePopup);
+        deleatePopup.Init(presetName, isLikeCollection);
+        UIManager.Instance.ShowPopup(PopupTypes.DeletePopup);
+    }
+    public void Vibrate()
+    {
+#if UNITY_ANDROID || UNITY_IOS
+        Handheld.Vibrate();
+#endif
+    }
 }

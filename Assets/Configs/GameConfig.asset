@@ -60,7 +60,7 @@ MonoBehaviour:
     pinkSoundIcon: {fileID: 21300000, guid: 9f3e8f5947df38243ba14f595bbaed43, type: 3}
     blackSoundIcon: {fileID: 21300000, guid: 767f79178df99644fa22a12004638abe, type: 3}
   - soundType: 1
-    soundClip: {fileID: 8300000, guid: 3cfa2d3100524814babb22b205e3ecbc, type: 3}
+    soundClip: {fileID: 8300000, guid: 06a1982ff6c6a55498057ebf157eff1b, type: 3}
     pinkSoundIcon: {fileID: 21300000, guid: 203be246da3442a408a8935fd37b6b88, type: 3}
     blackSoundIcon: {fileID: 21300000, guid: c7e696ffd63ec78449de430f338f4978, type: 3}
   - soundType: 2
@@ -76,7 +76,7 @@ MonoBehaviour:
     pinkSoundIcon: {fileID: 21300000, guid: e1bea5dbbb6716148a0786b6340010b8, type: 3}
     blackSoundIcon: {fileID: 21300000, guid: 6bf873cd74698e5409db9dd1775cd79e, type: 3}
   - soundType: 5
-    soundClip: {fileID: 8300000, guid: 06a1982ff6c6a55498057ebf157eff1b, type: 3}
+    soundClip: {fileID: 8300000, guid: 3cfa2d3100524814babb22b205e3ecbc, type: 3}
     pinkSoundIcon: {fileID: 21300000, guid: e1a6d1dd6f20a22459cb328b93a92b90, type: 3}
     blackSoundIcon: {fileID: 21300000, guid: ec834005c5e9bff40a984a7f46d438f5, type: 3}
   - soundType: 6

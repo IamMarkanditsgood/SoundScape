@@ -7,6 +7,7 @@ public class UIManager: MonoBehaviour
 {
     [SerializeField] private BasicScreen[] _screens;
     [SerializeField] private BasicPopup[] _popups;
+    [SerializeField] private Footer _footer;
 
     public static UIManager Instance { get; private set; }
 
@@ -18,8 +19,7 @@ public class UIManager: MonoBehaviour
         }
         
         InitScreens();
-
-        
+        _footer.Init();
     }
     
     private void InitScreens()

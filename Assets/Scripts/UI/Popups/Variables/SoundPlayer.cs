@@ -57,6 +57,11 @@ public class SoundPlayer : BasicPopup
 
         StopAllCoroutines();
         timer = null;
+
+        int totalTime = SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.TotalListenTime) + seconds;
+        SaveManager.PlayerPrefs.SaveInt(GameSaveKeys.TotalListenTime, totalTime);
+
+
         seconds = 0; 
         foreach (var icon in _icons)
         {
@@ -67,7 +72,7 @@ public class SoundPlayer : BasicPopup
     public override void SetPopup()
     {
         _name.text = _currentPreset.presetName;
-        _timer.text = "00:00";
+        _timer.text = "00:00:00";
         _presetImage.sprite = gameConfig.presetImages[_currentPreset.presetSpriteIndex];
 
         SetSounds();
@@ -96,11 +101,15 @@ public class SoundPlayer : BasicPopup
         }
         likedPresets.Add(_currentPreset.presetName);
         SaveManager.PlayerPrefs.SaveStringList(GameSaveKeys.LikedPreset, likedPresets);
+
+        Library library = (Library)UIManager.Instance.GetScreen(ScreenTypes.Library);
+        library.SetLikedPresets();
     }
 
     private void Play()
     {
-        if(timer == null)
+        Vibrate();
+        if (timer == null)
         {
             timer = StartCoroutine(Timer());
         }
@@ -130,5 +139,12 @@ public class SoundPlayer : BasicPopup
             }
             yield return new WaitForSeconds(1);
         }
+    }
+
+    public void Vibrate()
+    {
+#if UNITY_ANDROID || UNITY_IOS
+        Handheld.Vibrate();
+#endif
     }
 }

@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class HomeScreen : BasicScreen
 {
     [SerializeField] private Transform _content;
-    [SerializeField] private SoundPanel _soundPanelPref;
+    [SerializeField] private DefaultSoundPanel _soundPanelPref;
     [SerializeField] private GameConfig _gameConfig;
 
-    [SerializeField] private List<SoundPanel> _panels;
+    [SerializeField] private List<DefaultSoundPanel> _panels;
 
     public override void ResetScreen()
     {
@@ -32,7 +32,7 @@ public class HomeScreen : BasicScreen
     {
         for(int i = 0; i < _gameConfig._defaultPresets.Count; i++)
         {
-            SoundPanel panel = Instantiate(_soundPanelPref, _content);
+            DefaultSoundPanel panel = Instantiate(_soundPanelPref, _content);
             panel = SetPanel(panel, _gameConfig._defaultPresets[i]);
             _panels.Add(panel);
 
@@ -41,7 +41,7 @@ public class HomeScreen : BasicScreen
         }
     }
 
-    private SoundPanel SetPanel(SoundPanel panel, PresetData presetData )
+    private DefaultSoundPanel SetPanel(DefaultSoundPanel panel, PresetData presetData )
     {
         List<Sprite> icons = new();
         for(int i = 0; i< presetData.sounds.Count; i++)

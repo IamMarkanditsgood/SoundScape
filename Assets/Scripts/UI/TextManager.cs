@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class TextManager
 {
+    public enum TimeFormat
+    {
+        ColonSeparated,    // HH:MM:SS
+        LettersSeparated   // 99h 22m 33s
+    }
+
     public void SetText(object message, TMP_Text textRow, bool formatKNumber = false, string frontAddedMessage = "", string endAddedMessage = "", bool addToPrevious = false)
     {
         string formattedText = GetFormattedText(message, formatKNumber);
@@ -32,9 +38,18 @@ public class TextManager
         }
     }
 
-    public void SetTimerText(TMP_Text textRow, float seconds, bool showMinutes = false, bool showHours = false, string frontAddedMessage = "", string endAddedMessage = "", bool addToPrevious = false, string symbolBetween = ":")
+    public void SetTimerText(
+    TMP_Text textRow,
+    float seconds,
+    bool showMinutes = false,
+    bool showHours = false,
+    string frontAddedMessage = "",
+    string endAddedMessage = "",
+    bool addToPrevious = false,
+    string symbolBetween = ":",
+    TimeFormat format = TimeFormat.ColonSeparated)
     {
-        string formattedText = FormatTime(seconds, showMinutes, showHours, symbolBetween);
+        string formattedText = FormatTime(seconds, showMinutes, showHours, symbolBetween, format);
 
         if (addToPrevious)
         {
@@ -46,7 +61,12 @@ public class TextManager
         }
     }
 
-    private string FormatTime(float seconds, bool showMinutes, bool showHours, string symbolBetween)
+    private string FormatTime(
+    float seconds,
+    bool showMinutes,
+    bool showHours,
+    string symbolBetween,
+    TimeFormat format)
     {
         if (!showMinutes)
             showHours = false;
@@ -58,17 +78,27 @@ public class TextManager
         int mins = (totalSeconds / 60) % 60;
         int hrs = totalSeconds / 3600;
 
-        if (!showMinutes)
+        switch (format)
         {
-            return secs.ToString("D2");
-        }
-        else if (showMinutes && !showHours)
-        {
-            return mins.ToString("D2") + symbolBetween + secs.ToString("D2");
-        }
-        else 
-        {
-            return hrs.ToString("D2") + symbolBetween + mins.ToString("D2") + symbolBetween + secs.ToString("D2");
+            case TimeFormat.ColonSeparated:
+                if (!showMinutes)
+                    return secs.ToString("D2");
+                else if (showMinutes && !showHours)
+                    return mins.ToString("D2") + symbolBetween + secs.ToString("D2");
+                else
+                    return hrs.ToString("D2") + symbolBetween + mins.ToString("D2") + symbolBetween + secs.ToString("D2");
+
+            case TimeFormat.LettersSeparated:
+                string result = "";
+                if (showHours)
+                    result += hrs + "h ";
+                if (showMinutes)
+                    result += mins + "m ";
+                result += secs + "s";
+                return result.TrimEnd();
+
+            default:
+                return secs.ToString("D2");
         }
     }
 

@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     private List<AudioSource> _audioSources = new List<AudioSource>();
 
+    public List<PresetData> Presets => _presets;
+
     public void Awake()
     {
         if (instance == null)
@@ -90,6 +92,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void DeletePreset(string presetName)
+    {
+        for (int i = _presets.Count - 1; i >= 0; i--)
+        {
+            if (_presets[i].presetName == presetName)
+            {
+                _presets.RemoveAt(i);
+            }
+        }
+    }
+
+
+    public void SetNewPreset(PresetData newPreset)
+    {
+        _presets.Add(newPreset);
+        SaveData();
+    }
+
     public PresetData GetPresetData(string presetName)
     {
         foreach (PresetData presetData in _presets)
@@ -128,6 +148,7 @@ public class GameManager : MonoBehaviour
             _audioSources.Add(newSource);
         }
     }
+
     public void PlaySounds()
     {
         foreach(var audioSource in _audioSources)
