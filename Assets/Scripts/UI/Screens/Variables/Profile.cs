@@ -178,7 +178,7 @@ public class Profile : BasicScreen
 
     private void PrivacyPolice()
     {
-
+        Application.OpenURL("https://www.privacypolicies.com/live/6029e8a7-3557-4f5c-827c-c21ae7031a85");
     }
 
     private void Vibration()
