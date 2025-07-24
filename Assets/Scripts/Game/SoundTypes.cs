@@ -1,11 +1,11 @@
 public enum SoundTypes 
 {
-    Bird,
-    Crickets,
-    Fire,
-    Rain,
-    Jabki,
-    Nightingale,
-    River,
+    Book,
+    Cap,
+    Town,
+    Note,
+    Bug,
+    Tree,
+    Bell,
     Wind,
 }

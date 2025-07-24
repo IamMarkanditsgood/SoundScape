@@ -10,4 +10,5 @@ public static class GameSaveKeys
     public static readonly string Name = "Name";
     public static readonly string Vibro = "Vibro";
     public static readonly string Notification = "Notification";
+    public static readonly string AutoStop = "Avatar";
 }

@@ -96,7 +96,7 @@ public class PresetSaver : BasicPopup
     {
         PresetData newPreset = new PresetData();
         newPreset.presetName = GetUniqueName();
-        newPreset.presetSpriteIndex = _currentImage;
+       // newPreset.presetSpriteIndex = _currentImage;
         newPreset.sounds = _sounds;
         newPreset.volume = _soundsVolume;
         newPreset.isLiked = false;

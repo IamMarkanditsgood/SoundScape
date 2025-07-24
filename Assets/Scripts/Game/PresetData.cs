@@ -6,7 +6,8 @@ using UnityEngine;
 public class PresetData
 {
     public string presetName;
-    public int presetSpriteIndex;
+    public string presetSpriteAdres;
+    public string presetDesciption;
     public List<SoundTypes> sounds = new();
     public List<float> volume = new();
     public bool isLiked;

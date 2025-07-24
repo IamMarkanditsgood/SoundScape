@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   _defaultPresets:
-  - presetName: Silent Night
-    presetSpriteIndex: 4
+  - presetName: Default1
+    presetSpriteAdres: 
+    presetDesciption: DefaultPreset
     sounds: 0100000005000000
     volume:
     - 0.5
     - 0.5
     isLiked: 1
-  - presetName: Wings and Wind
-    presetSpriteIndex: 5
+  - presetName: Default2
+    presetSpriteAdres: 
+    presetDesciption: DefaultPreset
     sounds: 0000000007000000010000000400000002000000
     volume:
     - 0.5
@@ -30,27 +32,12 @@ MonoBehaviour:
     - 0.5
     - 0.5
     isLiked: 0
-  - presetName: Night River
-    presetSpriteIndex: 6
+  - presetName: Default3
+    presetSpriteAdres: 
+    presetDesciption: DefaultPreset
     sounds: 020000000600000001000000
     volume:
     - 0.5
-    - 0.5
-    - 0.5
-    isLiked: 0
-  - presetName: Calm Camp
-    presetSpriteIndex: 7
-    sounds: 02000000030000000400000001000000
-    volume:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    isLiked: 0
-  - presetName: Wild Life
-    presetSpriteIndex: 8
-    sounds: 0300000007000000
-    volume:
     - 0.5
     - 0.5
     isLiked: 0

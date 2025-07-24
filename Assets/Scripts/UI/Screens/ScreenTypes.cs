@@ -5,4 +5,5 @@ public enum ScreenTypes
     Profile,
     Library,
     Info,
+    Settings,
 }

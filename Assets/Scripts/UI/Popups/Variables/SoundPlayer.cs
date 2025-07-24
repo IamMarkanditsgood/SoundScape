@@ -73,7 +73,7 @@ public class SoundPlayer : BasicPopup
     {
         _name.text = _currentPreset.presetName;
         _timer.text = "00:00:00";
-        _presetImage.sprite = gameConfig.presetImages[_currentPreset.presetSpriteIndex];
+       // _presetImage.sprite = gameConfig.presetImages[_currentPreset.presetSpriteIndex];
 
         SetSounds();
     }

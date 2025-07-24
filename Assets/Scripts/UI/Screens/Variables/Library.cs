@@ -212,7 +212,7 @@ public class Library : BasicScreen
             icons.Add(GetPinkSprite(presetData.sounds[i]));
         }
 
-        panel.SetPanel(_gameConfig.presetImages[presetData.presetSpriteIndex], presetData.presetName, icons);
+        //panel.SetPanel(_gameConfig.presetImages[presetData.presetSpriteIndex], presetData.presetName, icons);
 
         return panel;
     }
