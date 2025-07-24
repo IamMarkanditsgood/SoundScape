@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class SettingsScreen : BasicScreen
 {
+    [SerializeField] private Button _backButton;
     [SerializeField] private Button _vibration;
     [SerializeField] private Button _notifications;
     [SerializeField] private Button _privacyPolicy;
@@ -37,6 +38,7 @@ public class SettingsScreen : BasicScreen
         _removeAutostopTime.onClick.AddListener(RemoveAutostopTime);
         _saveAutostop.onClick.AddListener(SaveAutostop);
         _resetAutostop.onClick.AddListener(ResetAutostop);
+        _backButton.onClick.AddListener(Back);
     }
 
     private void OnDestroy()
@@ -51,6 +53,7 @@ public class SettingsScreen : BasicScreen
         _removeAutostopTime.onClick.RemoveListener(RemoveAutostopTime);
         _saveAutostop.onClick.RemoveListener(SaveAutostop);
         _resetAutostop.onClick.RemoveListener(ResetAutostop);
+        _backButton.onClick.RemoveListener(Back);
     }
     
     public override void ResetScreen()
@@ -89,7 +92,7 @@ public class SettingsScreen : BasicScreen
 
     private void SetButtons()
     {
-        if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.Vibro) == 1)
+        if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.Vibro, 1) == 1)
         {
             _vibration.gameObject.GetComponent<Image>().sprite = _activeButton;
         }
@@ -97,7 +100,7 @@ public class SettingsScreen : BasicScreen
         {
             _vibration.gameObject.GetComponent<Image>().sprite = _inactiveButton;
         }
-        if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.Notification) == 1)
+        if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.Notification, 1) == 1)
         {
             _notifications.gameObject.GetComponent<Image>().sprite = _activeButton;
         }
@@ -108,7 +111,7 @@ public class SettingsScreen : BasicScreen
     }
     private void Vibration()
     {
-        if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.Vibro) == 1)
+        if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.Vibro, 1) == 1)
         {
             SaveManager.PlayerPrefs.SaveInt(GameSaveKeys.Vibro, 0);
             _vibration.gameObject.GetComponent<Image>().sprite = _inactiveButton;
@@ -123,7 +126,7 @@ public class SettingsScreen : BasicScreen
 
     private void Notification()
     {
-        if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.Notification) == 1)
+        if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.Notification, 1) == 1)
         {
             SaveManager.PlayerPrefs.SaveInt(GameSaveKeys.Notification, 0);
             _notifications.gameObject.GetComponent<Image>().sprite = _inactiveButton;
@@ -181,5 +184,10 @@ public class SettingsScreen : BasicScreen
     private void SaveAutostop()
     {
         SaveManager.PlayerPrefs.SaveInt(GameSaveKeys.AutoStop, currentAutostopTime);
+    }
+
+    private void Back()
+    {
+        UIManager.Instance.ShowScreen(ScreenTypes.Home);
     }
 }

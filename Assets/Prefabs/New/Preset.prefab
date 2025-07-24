@@ -1116,6 +1116,7 @@ GameObject:
   - component: {fileID: 8673664804119808943}
   - component: {fileID: 628124295084993619}
   - component: {fileID: 7740345677492966995}
+  - component: {fileID: -7886257101401384789}
   m_Layer: 5
   m_Name: Preset
   m_TagString: Untagged
@@ -1185,3 +1186,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-7886257101401384789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836185066464956181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a04ffe66e094340a140e85c4a129eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameConfig: {fileID: 11400000, guid: 9d89d73ae7602b146a2771c0e6d8b867, type: 2}
+  _presetName: {fileID: 8338250858033044349}
+  _presetDescription: {fileID: 3665337776812677951}
+  _soundIcons:
+  - {fileID: 5425563460889146388}
+  - {fileID: 7116598431340089231}
+  - {fileID: 7221876147807948626}
+  - {fileID: 1887906437964232169}
+  - {fileID: 7438424126539324842}
+  - {fileID: 4869804904044529171}
+  - {fileID: 1762180935713732913}
+  - {fileID: 3620420191640802007}
+  _presetImage: {fileID: 1424242266806054461}
+  _defaultPresetImage: {fileID: 2800000, guid: 411d1289102b7df47898f779a1275176, type: 3}
+  _deletePresetButton: {fileID: 2790453807989532658}

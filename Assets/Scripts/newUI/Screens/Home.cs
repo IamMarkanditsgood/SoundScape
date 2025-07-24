@@ -40,7 +40,6 @@ public class Home : BasicScreen
 
     private TextManager textManager = new TextManager();
 
-    private List<PresetData> presets => GameManager.instance.Presets;
     private PresetData currentPreset;
 
 
@@ -95,9 +94,11 @@ public class Home : BasicScreen
 
     private void SetCurrentPreset()
     {
+        currentPreset = GameManager.instance.Presets[_currentPresetIndex];
+
         GameManager.instance.SetSounds(currentPreset.presetName);
 
-        currentPreset = presets[_currentPresetIndex];
+        
         _currentPresetName.text = currentPreset.presetName;
         _currentPresetDescription.text = currentPreset.presetDesciption;
         _presetImageManager.SetSavedPicture(currentPreset.presetSpriteAdres, _presetImage, _defaultPresetImage);
@@ -147,7 +148,7 @@ public class Home : BasicScreen
 
     private void NextPreset()
     {
-        if(_currentPresetIndex < presets.Count - 1)
+        if(_currentPresetIndex < GameManager.instance.Presets.Count - 1)
         {
             _currentPresetIndex++;
             SetCurrentPreset();

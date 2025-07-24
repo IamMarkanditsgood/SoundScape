@@ -16,18 +16,27 @@ MonoBehaviour:
   - presetName: Default1
     presetSpriteAdres: 
     presetDesciption: DefaultPreset
-    sounds: 0100000005000000
+    sounds: 0000000001000000020000000300000004000000050000000600000007000000
     volume:
+    - 0
+    - 0.5
+    - 0
     - 0.5
     - 0.5
+    - 0
+    - 0
+    - 0
     isLiked: 1
   - presetName: Default2
     presetSpriteAdres: 
     presetDesciption: DefaultPreset
-    sounds: 0000000007000000010000000400000002000000
+    sounds: 0000000001000000020000000300000004000000050000000600000007000000
     volume:
-    - 0.5
-    - 0.5
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
     - 0.5
     - 0.5
     - 0.5
@@ -35,45 +44,50 @@ MonoBehaviour:
   - presetName: Default3
     presetSpriteAdres: 
     presetDesciption: DefaultPreset
-    sounds: 020000000600000001000000
+    sounds: 0000000001000000020000000300000004000000050000000600000007000000
     volume:
     - 0.5
     - 0.5
     - 0.5
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
     isLiked: 0
   sounds:
   - soundType: 0
     soundClip: {fileID: 8300000, guid: 67867cc058cbe9243a3b90df74d3f09c, type: 3}
-    pinkSoundIcon: {fileID: 21300000, guid: 9f3e8f5947df38243ba14f595bbaed43, type: 3}
-    blackSoundIcon: {fileID: 21300000, guid: 767f79178df99644fa22a12004638abe, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: 63c61e08e185e5547bbfe396c78e0ee4, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: d25fcbf0daf15d94eb89383f1b656d72, type: 3}
   - soundType: 1
     soundClip: {fileID: 8300000, guid: 06a1982ff6c6a55498057ebf157eff1b, type: 3}
-    pinkSoundIcon: {fileID: 21300000, guid: 203be246da3442a408a8935fd37b6b88, type: 3}
-    blackSoundIcon: {fileID: 21300000, guid: c7e696ffd63ec78449de430f338f4978, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: 66476eaebcfcc11418c6f5ad60972441, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: ed2dc769c6bd5d34480dd03daef5ba95, type: 3}
   - soundType: 2
     soundClip: {fileID: 8300000, guid: 32019f7983267974982d3e1902eee24c, type: 3}
-    pinkSoundIcon: {fileID: 21300000, guid: b15740b9370266b4fbc6c02b8ecda974, type: 3}
-    blackSoundIcon: {fileID: 21300000, guid: 6fbbf4c6ce495464b81cb38cf004802d, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: 9c82ed01cf0811946b276dcfcd773628, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: f4585c4c05e0cfa45890e67345f937ad, type: 3}
   - soundType: 3
     soundClip: {fileID: 8300000, guid: 674bb8bda8725f04da664e82d713fd2a, type: 3}
-    pinkSoundIcon: {fileID: 21300000, guid: 3bb8e55b589f68b4289a11ecdf245a40, type: 3}
-    blackSoundIcon: {fileID: 21300000, guid: bab973ee909053a4599cf33e97c33ead, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: cd6addaf18659014199d4aaa8a6b2a44, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: dcf919544404fb44b9e952d3149aeb99, type: 3}
   - soundType: 4
     soundClip: {fileID: 8300000, guid: 3f184a4e971030949a9f53ffe645c1d4, type: 3}
-    pinkSoundIcon: {fileID: 21300000, guid: e1bea5dbbb6716148a0786b6340010b8, type: 3}
-    blackSoundIcon: {fileID: 21300000, guid: 6bf873cd74698e5409db9dd1775cd79e, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: ad406d57a16619841bc14ebd1ba95490, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: 5f285adadc3c7664e94ca1b90807111e, type: 3}
   - soundType: 5
     soundClip: {fileID: 8300000, guid: 3cfa2d3100524814babb22b205e3ecbc, type: 3}
-    pinkSoundIcon: {fileID: 21300000, guid: e1a6d1dd6f20a22459cb328b93a92b90, type: 3}
-    blackSoundIcon: {fileID: 21300000, guid: ec834005c5e9bff40a984a7f46d438f5, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: b448f509103172f4b8035121a04b439e, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: 56080d0353f821447b516b2fade1a436, type: 3}
   - soundType: 6
     soundClip: {fileID: 8300000, guid: bfa4c4b7e90d03844863474062ae3d00, type: 3}
-    pinkSoundIcon: {fileID: 21300000, guid: 5eb2fbea81dae8a4d86ac6437c12c532, type: 3}
-    blackSoundIcon: {fileID: 21300000, guid: 7d104b3fba8985e4d96b6905b11b0fba, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: 6b8d245a995ee4d458f5f8512960cafd, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: 613f7cbdec2e9154896af43cccee72fe, type: 3}
   - soundType: 7
     soundClip: {fileID: 8300000, guid: 0f2c5d4fe9c4b3043a15a35a8f163dad, type: 3}
-    pinkSoundIcon: {fileID: 21300000, guid: fc0852a848f08824bb19a410c7973878, type: 3}
-    blackSoundIcon: {fileID: 21300000, guid: 0e77613217b798f4695c7a469abf9ed1, type: 3}
+    pinkSoundIcon: {fileID: 21300000, guid: 980f4e177a4aa2d4db56650abd1022ff, type: 3}
+    blackSoundIcon: {fileID: 21300000, guid: 3badabe08831bac489593b3c3ecd9342, type: 3}
   presetImages:
   - {fileID: 21300000, guid: 893badaaf51af44409600709e3cd083f, type: 3}
   - {fileID: 21300000, guid: 2726e92b14d6f544286cc9f6ba442d12, type: 3}

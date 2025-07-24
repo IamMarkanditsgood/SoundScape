@@ -7,6 +7,7 @@ using static TextManager;
 
 public class ProfileScreen : BasicScreen
 {
+    [SerializeField] private Button _backButton;
     [SerializeField] private TMP_InputField _name;
 
     [SerializeField] private Button _editName;
@@ -35,14 +36,15 @@ public class ProfileScreen : BasicScreen
 
         _editName.onClick.AddListener(EditName);
         _editPhoto.onClick.AddListener(EditPhoto);
-
+        _backButton.onClick.AddListener(Back);
     }
 
     private void OnDestroy()
     {
         _editName.onClick.RemoveListener(EditName);
         _editPhoto.onClick.RemoveListener(EditPhoto);
-
+        
+        _backButton.onClick.RemoveListener(Back);
     }
 
     private void OnApplicationQuit()
@@ -150,6 +152,9 @@ public class ProfileScreen : BasicScreen
     }
 
 
+    private void Back()
+    {
+        UIManager.Instance.ShowScreen(ScreenTypes.Home);
+    }
 
-    
 }

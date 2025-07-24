@@ -19,7 +19,7 @@ public class UIManager: MonoBehaviour
         }
         
         InitScreens();
-        _footer.Init();
+        //_footer.Init();
     }
     
     private void InitScreens()
