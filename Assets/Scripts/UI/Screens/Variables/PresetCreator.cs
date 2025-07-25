@@ -118,4 +118,9 @@ public class PresetCreator : BasicScreen
 
         }
     }
+
+    private void SliderChanged(int index)
+    {
+
+    }
 }

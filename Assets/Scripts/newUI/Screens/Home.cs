@@ -36,6 +36,9 @@ public class Home : BasicScreen
     [SerializeField] private Button _createPresetButton;
     [SerializeField] private Button _libraryButton;
     [SerializeField] private Button _playButton;
+    [SerializeField] private Sprite _playButtonActive;
+    [SerializeField] private Sprite _playButtonInactive;
+
     private bool _isPlaying = false;    
 
     private TextManager textManager = new TextManager();
@@ -68,10 +71,16 @@ public class Home : BasicScreen
 
     public override void ResetScreen()
     {
+        _isPlaying = false;
+        Debug.Log("Stop");
+        _playButton.gameObject.GetComponent<Image>().sprite = _playButtonInactive;
+        StopAllCoroutines();
+        GameManager.instance.StopSounds();
     }
 
     public override void SetScreen()
     {
+        _currentPresetIndex = 0;
         _autostopTime = SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.AutoStop);
         SetAutostop();
         SetCurrentPreset();
@@ -132,16 +141,23 @@ public class Home : BasicScreen
 
     private void SwitchMusic()
     {
+        Vibrate();
         _isPlaying =! _isPlaying;
         textManager.SetTimerText(_autostopTimeText,_autostopTime, showMinutes: true);
         if (_isPlaying)
         {
-            _autostopCoroutine = StartCoroutine(Autostop());
+            Debug.Log("Start");
+            _playButton.gameObject.GetComponent<Image>().sprite = _playButtonActive;
+            if(SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.AutoStop, 0) > 0)
+                _autostopCoroutine = StartCoroutine(Autostop());
             GameManager.instance.PlaySounds();
         }
         else
         {
-            StopAllCoroutines();
+            Debug.Log("Stop");
+            _playButton.gameObject.GetComponent<Image>().sprite = _playButtonInactive;
+            if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.AutoStop, 0) > 0)
+                StopAllCoroutines();
             GameManager.instance.StopSounds();
         }
     }
@@ -152,6 +168,12 @@ public class Home : BasicScreen
         {
             _currentPresetIndex++;
             SetCurrentPreset();
+
+            _isPlaying = false;
+            _playButton.gameObject.GetComponent<Image>().sprite = _playButtonInactive;
+            if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.AutoStop, 0) > 0)
+                StopAllCoroutines();
+            GameManager.instance.StopSounds();
         }
     }
 
@@ -161,6 +183,12 @@ public class Home : BasicScreen
         {
             _currentPresetIndex--;
             SetCurrentPreset();
+
+            _isPlaying = false;
+            _playButton.gameObject.GetComponent<Image>().sprite = _playButtonInactive;
+            if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.AutoStop, 0) > 0)
+                StopAllCoroutines();
+            GameManager.instance.StopSounds();
         }
     }
 
@@ -187,11 +215,24 @@ public class Home : BasicScreen
         int time = _autostopTime;
         while (time > 0)
         {
-            textManager.SetTimerText(_autostopTimeText, _autostopTime, showMinutes: true);
+            textManager.SetTimerText(_autostopTimeText, time, showMinutes: true);
             yield return new WaitForSeconds(1f);
             time--;
+
+            int timeRecord = SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.TotalListenTime);
+            timeRecord++;
+            SaveManager.PlayerPrefs.SaveInt(GameSaveKeys.TotalListenTime, timeRecord);
         }
 
         SwitchMusic();
+    }
+
+    private void Vibrate()
+    {
+        if (SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.Vibro, 1) == 1)
+        {
+            Debug.Log("Vibrate");
+            Handheld.Vibrate();
+        }
     }
 }

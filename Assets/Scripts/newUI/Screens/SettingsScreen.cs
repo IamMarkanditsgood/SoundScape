@@ -142,7 +142,7 @@ public class SettingsScreen : BasicScreen
     {
         if(SaveManager.PlayerPrefs.LoadInt(GameSaveKeys.AutoStop) == 0)
         {
-            SaveManager.PlayerPrefs.SaveInt(GameSaveKeys.Notification, 120);
+            SaveManager.PlayerPrefs.SaveInt(GameSaveKeys.AutoStop, 120);
             _autostopButton.SetActive(false);
             _autostopPanel.SetActive(true);
         }
@@ -152,6 +152,7 @@ public class SettingsScreen : BasicScreen
             _autostopButton.SetActive(true);
             _autostopPanel.SetActive(false);
         }
+        SetAutostop();
     }
 
     private void AddAutostopTime()

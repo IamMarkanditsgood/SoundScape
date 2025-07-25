@@ -136,14 +136,14 @@ public class GameManager : MonoBehaviour
         CleanSounds();
 
         PresetData preset = GetPresetData(presetName);
+        Debug.Log("presetName = " + presetName);
         for (int i =0; i< preset.sounds.Count; i++)
         {
             SoundData soundData = _gameConfig.GetSoundData(preset.sounds[i]);
             AudioSource newSource = Instantiate(_audioSourcePrefab);
-            float volume = GetSoundVolume(preset.sounds[i], preset);
-
+            
             newSource.clip = soundData.soundClip;
-            newSource.volume = volume;
+            newSource.volume = preset.volume[i];
 
             _audioSources.Add(newSource);
         }

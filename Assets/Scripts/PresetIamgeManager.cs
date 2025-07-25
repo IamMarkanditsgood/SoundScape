@@ -12,15 +12,14 @@ public class PresetIamgeManager : MonoBehaviour
 
     public void SetSavedPicture(string savedPath, RawImage image, Texture2D basicSprite)
     {
-        if (PlayerPrefs.HasKey("AvatarPath"))
-        {
-            string path = savedPath;
-            image.texture = NativeGallery.LoadImageAtPath(path, maxSize);
-        }
-        else
+        if (savedPath == string.Empty)
         {
             image.texture = basicSprite;
+            return;
         }
+
+        string path = savedPath;
+        image.texture = NativeGallery.LoadImageAtPath(path, maxSize);
     }
 
     public string PickFromGallery(RawImage image, Texture2D basicSprite)

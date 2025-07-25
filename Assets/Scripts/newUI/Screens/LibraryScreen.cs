@@ -10,7 +10,7 @@ public class LibraryScreen : BasicScreen
 
     [SerializeField] private Transform container;
     [SerializeField] private GameObject libraryPanelPrefab;
-    private List<GameObject> _libraryPanels;
+    private List<GameObject> _libraryPanels = new();
 
     private void Start()
     {
